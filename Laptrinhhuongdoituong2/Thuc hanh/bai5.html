@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <img id="lamp" src="pic_bulboff.gif" style="width:100px"> <br>
+    <button onclick="Button()">Switch</button>
+</head>
+
+<body>
+    <script>
+        class SwitchButton {
+            constructor() {
+                this.status = false;
+                this.lamp = ElectricLamp;
+            }
+            connectToLamp(electriclamp) {
+                if (this.status = false) {
+                    alert(`${electriclamp.name} Off`)
+                } else {
+                    alert(`${electriclamp.name} On`)
+                }
+            }
+            switchOff() {
+                return this.status = false;
+            }
+            switchOn() {
+                return this.status = true;
+            }
+        }
+
+        class ElectricLamp {
+            constructor(name) {
+                this.status = false;
+                this.name = name;
+            }
+            turnOff() {
+                return this.status = false;
+            }
+            turnOn() {
+                return this.status = true;
+            }
+        }
+        switchb = new SwitchButton();
+        lampb = new ElectricLamp('Lamp');
+        function Button() {
+            if (switchb.status == false) {
+                switchb.switchOn();
+                if (lampb.status == false) {
+                    lampb.turnOn()
+                    document.getElementById("lamp").src = "pic_bulbon.gif"
+                }
+                } else {
+                    switchb.switchOff();
+                    lampb.turnOff();
+                    document.getElementById("lamp").src = "pic_bulboff.gif"
+
+                }
+            }
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

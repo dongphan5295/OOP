@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <canvas id="mycircle" width="950px" height="450px" style="border:2px solid #d2d2d2;"></canvas>
+    <script>
+        function Circle(x, y, _radius) {
+            this.x = x;
+            this.y = y;
+            this.radius = _radius;
+            this.getRadius = function () {
+                return this.radius;
+            }
+            this.getArea = function () {
+                return this.radius * this.radius * Math.PI;
+            }
+            this.getPerimeter = function () {
+                return this.radius * 2 * Math.PI;
+            }
+            
+            this.drawCircle = function(){
+                let mycircle = document.getElementById("mycircle").getContext("2d");
+                mycircle.fillStyle = "#F712C5" ;
+                mycircle.beginPath() ;
+                mycircle.arc(x,y,this.radius,0,2*Math.PI);
+                mycircle.fill();
+            }
+            
+            this.textCircle = function () {
+                let mycircle = document.getElementById("mycircle").getContext("2d");
+                mycircle.font = "10px Arial";
+                mycircle.strokeText(this.getArea(), this.x, this.y);
+            }
+        }
+        let radius = Math.floor(Math.random() * 100);
+        let x = Math.random() * window.innerWidth;
+        let y = Math.random() * window.innerHeight;
+        let circle = new Circle(x, y, radius);
+        area = circle.getArea();
+        perimeter = circle.getPerimeter();
+        // document.write('Area is : =' + area + "<br>");
+        // document.write('Perimeter is : =' + perimeter + "</br>");
+        circle.drawCircle();
+        circle.textCircle();
+
+
+    </script>
+</body>
+
+</html>

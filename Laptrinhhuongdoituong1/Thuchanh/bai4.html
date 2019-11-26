@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <canvas id="myCanvas" width="1350px" height="200px" style="border:1px solid #d3d3d3;"></canvas>
+    <script>
+        // function Rectangle(length, width) {
+        let Rectangle = function (length, width) {
+            this.length = length;
+            this.width = width;
+
+            this.setLength = function (length) {
+                this.length = length;
+            }
+            this.setWidth = function (width) {
+                this.width = width;
+            }
+            this.getLength = function () {
+                return this.length;
+            }
+            this.getWidth = function () {
+                return this.width;
+            }
+            this.getArea = function () {
+                return this.length * this.width;
+            }
+            this.getPerimeter = function () {
+                return (this.length + this.width) * 2;
+            }
+
+            this.creatRectangle = function (x, y) {
+                let ctx = document.getElementById("myCanvas").getContext("2d");
+                ctx.strokeStyle = "#CB1414"
+                // ctx.fillText = (getArea())
+                ctx.beginPath();
+                ctx.strokeRect(x, y, this.length, this.width);
+            }
+
+        }
+
+        let rectangle = new Rectangle(100, 50);
+        let chuvi = rectangle.getPerimeter();
+        let dientich = rectangle.getArea();
+        document.write(chuvi + "</br>");
+        document.write(dientich + "</br>");
+        rectangle.creatRectangle(0, 0);
+
+        rectangle.setLength(200);
+        rectangle.setWidth(100);
+
+
+        chuvi = rectangle.getPerimeter();
+        dientich = rectangle.getArea();
+        document.write(chuvi + "</br>");
+        document.write(dientich + "</br>");
+        rectangle.creatRectangle(100, 60);
+
+
+
+
+    </script>
+</body>
+
+</html>

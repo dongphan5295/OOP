@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Rat {
+            constructor(name,amount,speed) {
+                this.name = name;
+                this.amount = amount;
+                this.speed = speed ;
+            }
+            speak() {
+                console.log("Chít chít!!");
+            }
+        }
+        class Cat {
+            constructor(name,weight,maxspeed){
+                this.name = name;
+                this.weight = weight;
+                this.maxspeed = maxspeed;
+            }
+            getWeight() {
+                return this.weight;
+            }
+            speak() {
+                console.log("Meo meo!!")
+            }
+            catch(rat) {
+                if(this.maxspeed>rat.speed && rat.amount>0) {
+                    console.log("You will be dead !!");
+                } else {
+                    console.log("You never die huhu !!")
+                }
+            }
+            eat(rat) {
+                if(rat.amount>0) {
+                    this.weight++   
+                    console.log('You dead !!')
+                } else {
+                    console.log('No any more mouse !!')
+                }
+            }
+        }
+        rat = new Rat('Mouse',5,20);
+        cat = new Cat('Mewz',20,25);
+        rat.speak();
+        cat.speak();
+        cat.catch(rat);
+        cat.eat(rat);
+        console.log(cat.getWeight());
+        </script>
+</body>
+</html>

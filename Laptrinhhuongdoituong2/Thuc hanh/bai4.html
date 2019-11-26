@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <img id="lamp1" src="pic_bulboff.gif" style="width:100px">
+    <img id="lamp2" src="pic_bulboff.gif" style="width:100px"><br>
+    <button onclick='switchLamp1();'>Lamp 1</button>
+    <button onclick='turnSwichOnOff();'>Switch</button>
+    <button onclick="switchLamp2();">Lamp 2</button>
+    <script>
+
+        class SwitchButton {
+            constructor() {
+                this.status = false;
+                this.lamp = ElectricLamp;
+            }
+
+            connectToLamp(ElectricLamp) {
+                if (ElectricLamp.status == true) {
+                    alert(`${ElectricLamp.name} On`)
+                } else {
+                    alert(`${ElectricLamp.name} Off`)
+                }
+            }
+            switchOn() {
+                this.status = true;
+            }
+            switchOff() {
+                this.status = false;
+            }
+        }
+
+        class ElectricLamp {
+            constructor(name) {
+                this.name = name
+                this.status = false
+            };
+
+            tunrOn() {
+                this.status = true;
+            }
+            tunrOff() {
+                this.status = false;
+            }
+        }
+
+        let turnPower = new SwitchButton();
+        let Lamp1 = new ElectricLamp('Lamp 1')
+        let Lamp2 = new ElectricLamp('Lamp 2')
+
+
+        function turnSwichOnOff() {
+
+            if (turnPower.status == false) {
+                turnPower.switchOn();
+                turnPower.connectToLamp(Lamp1)
+                turnPower.connectToLamp(Lamp2)
+
+            } else {
+                turnPower.switchOff();
+                document.getElementById('lamp1').src = 'pic_bulboff.gif';
+                document.getElementById('lamp2').src = 'pic_bulboff.gif';
+            }
+
+            //Check the lamp is on or off after pressed the switch off and  on again.
+
+            if (turnPower.status == true) {
+                if (Lamp1.status == true) {
+                    document.getElementById('lamp1').src = 'pic_bulbon.gif';
+                }
+                if (Lamp2.status == true) {
+                    document.getElementById('lamp2').src = 'pic_bulbon.gif';
+                }
+            }
+        }
+
+        function switchLamp1() {
+            if (turnPower.status == true) {
+                if (Lamp1.status == false) {
+                    Lamp1.tunrOn()
+                    document.getElementById('lamp1').src = 'pic_bulbon.gif'
+                }
+                else {
+                    Lamp1.tunrOff()
+                    document.getElementById('lamp1').src = 'pic_bulboff.gif';
+                }
+
+            }
+        }
+        function switchLamp2() {
+            if (turnPower.status == true) {
+                if (Lamp2.status == false) {
+                    Lamp2.tunrOn()
+                    document.getElementById('lamp2').src = 'pic_bulbon.gif'
+                }
+                else {
+                    Lamp2.tunrOff()
+                    document.getElementById('lamp2').src = 'pic_bulboff.gif';
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>
