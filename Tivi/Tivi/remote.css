@@ -1,0 +1,139 @@
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+.remote {
+    border: 1px solid rgb(75, 74, 74);
+    border-radius: 5px;
+    position: absolute;
+    top: 50%;
+    left: 70%;
+    transform: translate(-50%, -50%);
+    width: 200px;
+}
+
+button {
+    height: 30px;
+    background-color: rgb(219, 40, 40);
+    border-radius: 3px;
+    border: 1px solid #0a0909;
+    background-color: transparent;
+    font-size: 1rem;
+    color: #333;
+    background-image: linear-gradient(to bottom, transparent, transparent 50%, rgba(0, 0, 0, .04));
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .05), inset 0 1px 0 0 rgba(255, 255, 255, .45), inset 0 -1px 0 0 rgba(255, 255, 255, .15), 0 1px 0 0 rgba(255, 255, 255, .15);
+    text-shadow: 0 1px rgba(255, 255, 255, .4);
+}
+button.channel {
+    height: 20px;
+    background-color: rgb(9, 141, 250);
+    border-radius: 3px;
+    border: 1px solid #c4c4c4;
+    background-color: #92b8d1;
+    font-size: 1rem;
+    color: rgb(5, 63, 150);
+    background-image: linear-gradient(to bottom, transparent, transparent 50%, rgba(11, 34, 241, 0.04));
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .05), inset 0 1px 0 0 rgba(255, 255, 255, .45), inset 0 -1px 0 0 rgba(255, 255, 255, .15), 0 1px 0 0 rgba(255, 255, 255, .15);
+    text-shadow: 0 1px rgb(12, 66, 214);
+}
+button.volume {
+    height: 20px;
+    background-color: rgb(9, 141, 250);
+    border-radius: 3px;
+    border: 1px solid #c4c4c4;
+    background-color: #92b8d1;
+    font-size: 1rem;
+    color: rgb(5, 63, 150);
+    background-image: linear-gradient(to bottom, transparent, transparent 50%, rgba(11, 34, 241, 0.04));
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .05), inset 0 1px 0 0 rgba(255, 255, 255, .45), inset 0 -1px 0 0 rgba(255, 255, 255, .15), 0 1px 0 0 rgba(255, 255, 255, .15);
+    text-shadow: 0 1px rgb(12, 66, 214);
+}
+button.powertv {
+    height: 20px;
+    background-color: #f0595f;
+    border-color: #b0353a;
+    color: #fff;
+}
+
+button:hover {
+    background: #eeaaee;
+}
+
+.change {
+    color: #337cac;
+}
+
+.power {
+    background-color: #f0595f;
+    border-color: #b0353a;
+    color: #fff;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.prevch {
+    background-color: #12eb2f;
+    border-color: #3fb035;
+    color: rgb(80, 1, 1);
+   
+}
+.connect {
+    background-color: #eb9412;
+    border-color: #3fb035;
+    color: rgb(1, 55, 80);
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.power:hover {
+    background-color: #f17377;
+}
+
+
+.change {
+    background-color: #5963f0;
+    border-color: #6489ec;
+    color: #fff;
+}
+
+.change:hover {
+    background-color: #f17377;
+}
+
+.remote-keys {
+    background-color: #5c5b5b17;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+    padding: 20px;
+}
+.image {
+    position: absolute;
+    top: 15%;
+    left: 35%;
+    transform: translate(-50%, -0%);
+
+}
+.tv {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    position: fixed;
+    top: 72%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 200px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 2px;
+    padding: 2px;
+}
+
